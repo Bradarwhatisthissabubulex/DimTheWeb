@@ -1,32 +1,35 @@
 {
-	"manifest_version": 3,
-	"name": "Light Off",
-	"version": "1.0.0",
-	"description": "Change the tab brightness easily.",
-	"permissions": ["activeTab", "scripting", "storage"],
-	"action": {
-		"default_popup": "index.html",
-		"default_title": "Light Off",
-		"default_icon": {
-			"16": "icons/icon.png",
-			"32": "icons/icon.png",
-			"48": "icons/icon.png",
-			"128": "icons/icon.png"
-		}
-	},
-	"icons": {
-		"16": "icons/icon.png",
-		"32": "icons/icon.png",
-		"48": "icons/icon.png",
-		"128": "icons/icon.png"
-	},
-	"content_scripts": [
-		{
-			"matches": ["<all_urls>"],
-			"js": ["content.js"],
-			"run_at": "document_start",
-			"all_frames": true
-		}
-	],
-	"host_permissions": ["<all_urls>"]
+  "manifest_version": 3,
+  "name": "DimTheWeb",
+  "version": "2.0.0",
+  "description": "Dim your tabs, vibe to lofi, stay cozy.",
+  "permissions": ["activeTab", "scripting", "storage", "alarms"],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "DimTheWeb",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["<all_urls>"]
 }
