@@ -61,4 +61,4 @@ Load as an unpacked extension in Chrome:
 
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE.md) for details.
